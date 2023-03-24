@@ -10,80 +10,88 @@ class User extends Model {
 
 
 // Define the User model
- User.init (
-    {
+User.init(
+  {
     id: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
     },
     name: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       allowNull: false
     },
     email: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
       unique: true
     },
     password: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       allowNull: false
     }
-  });
-  
-  // Define the Recipe model
-   class Recipe extends Model {}
-      Recipe.init ( 
-    {
+  },
+  {
+    sequelize
+  }
+);
+class Recipe extends Model {}
+Recipe.init(
+  {
     id: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
     },
     title: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       allowNull: false
     },
     description: {
-      type: Sequelize.TEXT,
+      type: DataTypes.TEXT,
       allowNull: false
     },
     ingredients: {
-      type: Sequelize.ARRAY(Sequelize.STRING),
+      type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: false
     },
     directions: {
-      type: Sequelize.TEXT,
+      type: DataTypes.TEXT,
       allowNull: false
     }
-  });
-  
-  // Define the Comment model
-  class Comment extends Model {}
-    Comment.init (
-     {
+  },
+  {
+    sequelize
+  }
+);
+class Comment extends Model {}
+Comment.init(
+  {
     id: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
     },
     text: {
-      type: Sequelize.TEXT,
+      type: DataTypes.TEXT,
       allowNull: false
     }
-  });
-  
-  // Define the associations between the models
-  User.hasMany(Comment, { as: 'comments' });
-  User.hasMany(Recipe, { as: 'recipes' });
+  },
+  {
+    sequelize
+  }
+);
+User.hasMany(Comment, { as: 'comments' });
+User.hasMany(Recipe, { as: 'recipes' });
 
-  Recipe.belongsTo(User, { foreignKey: 'userId' });
-  Recipe.hasMany(Comment, { as: 'comments' });
+Recipe.belongsTo(User, { foreignKey: 'userId' });
+Recipe.hasMany(Comment, { as: 'comments' });
 
-  Comment.belongsTo(Recipe, { foreignKey: 'recipeId' });
-  Comment.belongsTo(User, { foreignKey: 'userId' });
+Comment.belongsTo(Recipe, { foreignKey: 'recipeId' });
+Comment.belongsTo(User, { foreignKey: 'userId' });
 
-  module.exports = User;
-  module.exports = Recipe;
-  module.exports = Comment;
+module.exports = {
+  User,
+  Recipe,
+  Comment
+};
