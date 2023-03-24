@@ -33,7 +33,8 @@ class User extends Model {
   });
   
   // Define the Recipe model
-   Recipe.init ( 
+   class Recipe extends Model {}
+      Recipe.init ( 
     {
     id: {
       type: Sequelize.INTEGER,
@@ -59,7 +60,8 @@ class User extends Model {
   });
   
   // Define the Comment model
-   Comment.init (
+  class Comment extends Model {}
+    Comment.init (
      {
     id: {
       type: Sequelize.INTEGER,
@@ -81,3 +83,7 @@ class User extends Model {
 
   Comment.belongsTo(Recipe, { foreignKey: 'recipeId' });
   Comment.belongsTo(User, { foreignKey: 'userId' });
+
+  module.exports = User;
+  module.exports = Recipe;
+  module.exports = Comment;
