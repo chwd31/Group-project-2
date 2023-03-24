@@ -5,7 +5,7 @@ const session = require('express-session');
 const hbs = exphbs.create({});
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-const routes = require('./controllers/user-controller');
+// const routes = require('./controllers/user-controller');
 const sequelize = require('./config/connection');
 require('dotenv').config();
 
@@ -34,7 +34,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(routes);
+// app.use(routes);
 
 sequelize.sync()
     .then(() => {
