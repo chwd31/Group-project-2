@@ -45,3 +45,26 @@ router.post('/login', async (req, res) => {
   });
   
   module.exports = router;
+
+  router.post('/signup', async (req, res) => {
+    try {
+      // Create a new user with the provided email and password
+      const userData = await User.create({
+        email: req.body.email,
+        password: req.body.password,
+      });
+  
+      // Save the new user's ID to the session
+      req.session.save(() => {
+        req.session.user_id = userData.id;
+        req.session.logged_in = true;
+  
+        res.json({ user: userData, message: 'You are now signed up and logged in!' });
+      });
+  
+    } catch (err) {
+      res.status(400).json(err);
+    }
+  });
+  
+  module.exports = router;
