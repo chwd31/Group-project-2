@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+  </head>
+  <body>
+    <header>
+        {{!-- Heading for the page --}}
+      <h1>My Recipe App</h1>
+      <nav>
+        {{!-- Navigation menu --}}
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/recipes">Recipes</a></li>
+          {{!-- If user is logged in, display logout, if not display login or signup --}}
+          {{#if user}}
+            <li><a href="/logout">Logout</a></li>
+          {{else}}
+            <li><a href="/login">Login</a></li>
+            <li><a href="/signup">Signup</a></li>
+          {{/if}}
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+        {{!-- main content of body will be displayd here --}}
+      {{> body}}
+    </main>
+
+    <footer>
+        {{!-- Footer of the page --}}
+      <p>&copy; My Recipe App</p>
+    </footer>
+  </body>
+</html>

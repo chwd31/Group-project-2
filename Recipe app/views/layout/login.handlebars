@@ -1,0 +1,42 @@
+<div class="container">
+  <h2>Login</h2>
+  <!-- A form for logging in, which sends a POST request to "/login" when submitted -->
+  <form action="/login" method="post">
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <!-- An input field for the username, which is required and has a label -->
+      <input type="text" class="form-control" id="username" name="username" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <!-- An input field for the password, which is required and has a label -->
+      <input type="password" class="form-control" id="password" name="password" required>
+    </div>
+    <!-- A button to submit the form and login -->
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>
+
+  <hr>
+
+  <h2>Sign Up</h2>
+  <!-- A form for signing up, which sends a POST request to "/signup" when submitted -->
+  <form action="/signup" method="post">
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <!-- An input field for the username, which is required and has a label -->
+      <input type="text" class="form-control" id="username" name="username" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <!-- An input field for the email, which is required and has a label -->
+      <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <!-- An input field for the password, which is required and has a label -->
+      <input type="password" class="form-control" id="password" name="password" required>
+    </div>
+    <!-- A button to submit the form and sign up -->
+    <button type="submit" class="btn btn-primary">Sign Up</button>
+  </form>
+</div>
