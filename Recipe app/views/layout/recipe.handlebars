@@ -1,0 +1,46 @@
+{{> layout}} <!-- Includes the layout template -->
+
+{{#if recipe}} <!-- If a recipe is found -->
+  <h2>{{recipe.title}}</h2> <!-- Display the recipe title -->
+  <p>{{recipe.description}}</p> <!-- Display the recipe description -->
+  <ul>
+    {{#each recipe.ingredients}} <!-- Display each ingredient in a list -->
+      <li>{{this}}</li>
+    {{/each}}
+  </ul>
+  <ol>
+    {{#each recipe.steps}} <!-- Display each step in a numbered list -->
+      <li>{{this}}</li>
+    {{/each}}
+  </ol>
+
+  <h3>Comments</h3>
+  {{#if comments}} <!-- If there are comments -->
+    <ul> <!-- Display each comment in a list -->
+      {{#each comments}}
+        <li>
+          <p>{{this.text}}</p>
+          <small>Posted by {{this.author}} on {{dateFormat this.createdAt}}</small>
+        </li>
+      {{/each}}
+    </ul>
+  {{else}} <!-- If there are no comments -->
+    <p>No comments yet.</p>
+  {{/if}}
+
+  {{#if user}} <!-- If the user is logged in -->
+    <h3>Add a comment</h3>
+    <form method="post" action="/recipes/{{recipe.id}}/comments"> <!-- Create a form to add a comment -->
+      <div>
+        <label for="text">Comment:</label>
+        <textarea id="text" name="text" required></textarea>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  {{else}} <!-- If the user is not logged in -->
+    <p>You must be logged in to leave a comment.</p>
+  {{/if}}
+
+{{else}} <!-- If no recipe is found -->
+  <p>Recipe not found.</p>
+{{/if}}
