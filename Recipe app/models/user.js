@@ -8,8 +8,6 @@ class User extends Model {
   }
 };
 
-
-// Define the User model
 User.init(
   {
     id: {
@@ -81,6 +79,7 @@ Comment.init(
     sequelize
   }
 );
+
 User.hasMany(Comment, { as: 'comments' });
 User.hasMany(Recipe, { as: 'recipes' });
 

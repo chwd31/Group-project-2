@@ -5,7 +5,9 @@ const session = require('express-session');
 const hbs = exphbs.create({});
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-// const routes = require('./controllers/user-controller');
+const homeRoutes = require('./routes/home-routes');
+const userRoutes = require('./routes/user-routes');
+
 const sequelize = require('./config/connection');
 require('dotenv').config();
 
@@ -34,10 +36,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use(routes);
+app.use('/', homeRoutes);
+app.use('/users', userRoutes);
 
 sequelize.sync()
     .then(() => {
+        app.listen(PORT, () => console.log('server running'));
         console.log('Successful sync!');
     }).catch((error) => {
         console.error('Sync failed', error);
