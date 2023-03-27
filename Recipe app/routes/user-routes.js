@@ -1,8 +1,8 @@
 const express = require('express');
 const path = require('path');
-const loginController = require('./controllers/loginController');
-const logoutController = require('./controllers/logoutController');
-const signupController = require('./controllers/signupController');
+const loginController = require('../controllers/loginController');
+const logoutController = require('../controllers/logoutController');
+const signupController = require('../controllers/signupController');
 
 const app = express();
 
