@@ -1,21 +1,14 @@
-const express = require('express');
-const path = require('path');
+const router = require('express').Router();
 const loginController = require('../controllers/loginController');
 const logoutController = require('../controllers/logoutController');
 const signupController = require('../controllers/signupController');
 
-const app = express();
+router.post('/login', loginController);
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
+router.post('/logout', logoutController);
 
-app.post('/login', loginController);
+router.post('/signup', signupController);
 
-app.post('/logout', logoutController);
 
-app.post('/signup', signupController);
 
-app.listen(3000, () => {
-  console.log('Server running on port 3000');
-});
+module.exports = router;
