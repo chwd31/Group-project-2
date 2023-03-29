@@ -1,1 +1,2 @@
-const recipeData = []
+const recipesData = [];
+module.exports = recipesData;
