@@ -2,18 +2,20 @@
 const sequelize = require('../config/connection');
 const { User, Recipe, Comment } = require('../models');
 
-const userData = require('./userData');
-const recipeData = require('./recipeData.js');
-const commentData = require('./commentData.js');
+const usersData = require('./userData');
+const recipesData = require('./recipeData.js');
+const commentsData = require('./commentData.js');
 
 async function seedDatabase() {
   // Sync the database and create tables if they don't exist
-  await User.sync({ force: true });
-  await Recipe.sync({ force: true });
-  await Comment.sync({ force: true });
-
+//   const usersData = await User.sync({ force: true });
+//   const recipesRawData = await Recipe.sync({ force: true });
+//   const commentsData = await Comment.sync({ force: true });
+// const recipesData = 
   // Seed the User table
+  await sequelize.sync({force: true })
   const users = await User.bulkCreate(usersData);
+
 
   // Seed the Recipe table with a reference to the corresponding User
   const recipes = await Promise.all(

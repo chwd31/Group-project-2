@@ -1,1 +1,2 @@
-const userData = []
+const usersData = [];
+module.exports = usersData;

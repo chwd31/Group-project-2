@@ -1,1 +1,2 @@
-const commentData = []
+const commentsData = [];
+module.exports = commentsData;
