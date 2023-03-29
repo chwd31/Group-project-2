@@ -29,15 +29,3 @@ CREATE DATABASE recipe_db;
 --   FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 -- );
 
--- -- Step 4: Create the comments table
--- CREATE TABLE `comments` (
---   `comment_id` INTEGER auto_increment,
---   `text` TEXT NOT NULL,
---   `user_id` INTEGER,
---   `recipe_id` INTEGER,
---   `created_at` DATETIME NOT NULL,
---   `updated_at` DATETIME NOT NULL,
---   PRIMARY KEY (`comment_id`),
---   FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
---   FOREIGN KEY (`recipe_id`) REFERENCES `recipes` (`recipe_id`) ON DELETE CASCADE ON UPDATE CASCADE
--- );

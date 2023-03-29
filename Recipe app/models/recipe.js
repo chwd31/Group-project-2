@@ -1,5 +1,6 @@
+// const Sequelize = require('Sequelize')
 const sequelize = require('../config/connection');
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes, Sequelize } = require('sequelize');
 
 class Recipe extends Model {}
 Recipe.init(
@@ -18,12 +19,14 @@ Recipe.init(
       allowNull: false
     },
     ingredients: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
-      allowNull: false
+      type: DataTypes.JSON,
+      // defaultValue: [],
+      // allowNull: false
     },
     directions: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
-      allowNull: false
+      type: DataTypes.JSON,
+      // defaultValue: [],
+      // allowNull: false
     },
     user_id: {
       type: DataTypes.INTEGER,
