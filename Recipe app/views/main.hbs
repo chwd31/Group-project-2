@@ -17,7 +17,7 @@
           <li><a href="/recipes">Recipes</a></li>
           {{!-- If user is logged in, display logout, if not display login or signup --}}
           {{#if user}}
-            <li><a href="/logout">Logout</a></li>
+            <li><a href="/logout" id="logout">Logout</a></li>
           {{else}}
             <li><a href="/login">Login</a></li>
             <li><a href="/signup">Signup</a></li>
