@@ -1,4 +1,5 @@
 const path = require('path');
+const hbs1 = require('hbs')
 const express = require('express');
 const exphbs = require('express-handlebars');
 const session = require('express-session');
@@ -30,7 +31,7 @@ app.use(session(sess));
 
 // declare the template that we are using
 app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
+app.set('view engine', 'hbs');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
