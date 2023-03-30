@@ -29,13 +29,14 @@ Here are some simple visuals of what the application should look like in the bro
     
 ## Installation
     
-To use this application, you will need to have Node.js installed on your desktop. Once in your code editor of choice, you will need to open your terminal and initialize npm with the command: npm init. Once you have npm initialized, you will install npm with the command: npm install. To install all of the dependencies that we have used for this project you will use the command: npm i express sequelize mysql2 express-session bcrypt express-handlebars dotenv connect-session-sequelize handlebars. In order to install nodemon, you will need to use the command: npm i nodemon --save-dev.
+To use this application, you will need to have Node.js installed on your desktop. Once in your code editor of choice, you will need to open your terminal and initialize npm with the command: npm init. Once you have npm initialized, you will install npm with the command: npm install. To install all of the dependencies that we have used for this project you will use the command: npm i express sequelize mysql2 express-session bcrypt express-handlebars dotenv connect-session-sequelize handlebars path. In order to install nodemon, you will need to use the command: npm i nodemon --save-dev.
             
 ## Usage
     
-This application is used to post recipes, view others recipes, and comment on posts. Once in your terminal you will type the command: mysql -u root -p. You will then be prompted to enter your password which you should have also put into your .env file. You will then source your schema file, and quit mysql. You will then need to enter your seeds folder and type the command: node seed. This will seed your data and create the tables that you need for your information. Lastly, to get your server running, you will need to type the command: npm start. Your server will then start and you can then go to the deployed site. Once at the site, a user can view posts without logging in; however, they will need to create an account or sign in to post or comment in the site. To post a recipe, they will follow a guideline to enter a name, instructions, ingredients, and a description.
+This application is used to post recipes, view others recipes, and comment on posts. Once in your terminal you will type the command: mysql -u root -p. You will then be prompted to enter your password which you should have also put into your '.env' file. You will then source your schema file, and quit mysql. You will then need to enter your seeds folder and type the command: node seed. This will seed your database and create the tables that you need for your information. Lastly, to get your server running, you will need to type the command: npm start. Your server will then start and you can then go to the deployed site. Once at the site, a user can view posts without logging in; however, they will need to create an account or sign in to post or comment in the site. To post a recipe, they will follow a guideline to enter a name, instructions, ingredients, and a description.
     
 ## License 
+
 This application is covered under the MIT License. For further explanation of what this license does please visit this provided link:  https://opensource.org/licenses/MIT
     
 ## Contribution
