@@ -1,46 +1,55 @@
-{{> layout}} <!-- Includes the layout template -->
+<div class="container mt-5">
+  {{> layout}}
 
-{{#if recipe}} <!-- If a recipe is found -->
-  <h2>{{recipe.title}}</h2> <!-- Display the recipe title -->
-  <p>{{recipe.description}}</p> <!-- Display the recipe description -->
-  <ul>
-    {{#each recipe.ingredients}} <!-- Display each ingredient in a list -->
-      <li>{{this}}</li>
-    {{/each}}
-  </ul>
-  <ol>
-    {{#each recipe.steps}} <!-- Display each step in a numbered list -->
-      <li>{{this}}</li>
-    {{/each}}
-  </ol>
-
-  <h3>Comments</h3>
-  {{#if comments}} <!-- If there are comments -->
-    <ul> <!-- Display each comment in a list -->
-      {{#each comments}}
-        <li>
-          <p>{{this.text}}</p>
-          <small>Posted by {{this.author}} on {{dateFormat this.createdAt}}</small>
-        </li>
-      {{/each}}
-    </ul>
-  {{else}} <!-- If there are no comments -->
-    <p>No comments yet.</p>
-  {{/if}}
-
-  {{#if user}} <!-- If the user is logged in -->
-    <h3>Add a comment</h3>
-    <form method="post" action="/recipes/{{recipe.id}}/comments"> <!-- Create a form to add a comment -->
-      <div>
-        <label for="text">Comment:</label>
-        <textarea id="text" name="text" required></textarea>
+  {{#if recipe}}
+    <div class="card">
+      <div class="card-header">
+        <h2>{{recipe.title}}</h2>
       </div>
-      <button type="submit">Submit</button>
-    </form>
-  {{else}} <!-- If the user is not logged in -->
-    <p>You must be logged in to leave a comment.</p>
-  {{/if}}
+      <div class="card-body">
+        <p>{{recipe.description}}</p>
+        <h3>Ingredients</h3>
+        <ul>
+          {{#each recipe.ingredients}}
+            <li>{{this}}</li>
+          {{/each}}
+        </ul>
+        <h3>Steps</h3>
+        <ol>
+          {{#each recipe.steps}}
+            <li>{{this}}</li>
+          {{/each}}
+        </ol>
 
-{{else}} <!-- If no recipe is found -->
-  <p>Recipe not found.</p>
-{{/if}}
+        {{!-- <h3>Comments</h3>
+        {{#if comments}}
+          <ul>
+            {{#each comments}}
+              <li>
+                <p>{{this.text}}</p>
+                <small>Posted by {{this.author}} on {{dateFormat this.createdAt}}</small>
+              </li>
+            {{/each}}
+          </ul>
+        {{else}}
+          <p>No comments yet.</p>
+        {{/if}}
+
+        {{#if user}}
+          <h3>Add a comment</h3>
+          <form method="post" action="/recipes/{{recipe.id}}/comments">
+            <div>
+              <label for="text">Comment:</label>
+              <textarea id="text" name="text" required></textarea>
+            </div>
+            <button type="submit">Submit</button>
+          </form>
+        {{else}}
+          <p>You must be logged in to leave a comment.</p>
+        {{/if}} --}}
+      </div>
+    </div>
+  {{else}}
+    <p>Recipe not found.</p>
+  {{/if}}
+</div>
