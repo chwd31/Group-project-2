@@ -1,6 +1,34 @@
 <div class="container mt-5">
   {{> layout}}
 
+<div class="card">
+    <div class="card-header">
+      <h2>New Recipe</h2>
+    </div>
+    <div class="card-body">
+      <form method="post" action="/recipes">
+        <div class="form-group">
+          <label for="title">Title:</label>
+          <input type="text" id="title" name="title" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="description">Description:</label>
+          <textarea id="description" name="description" class="form-control" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="ingredients">Ingredients:</label>
+          <textarea id="ingredients" name="ingredients" class="form-control" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="steps">Steps:</label>
+          <textarea id="steps" name="steps" class="form-control" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Create Recipe</button>
+      </form>
+    </div>
+  </div>
+
+
   {{#if recipe}}
     <div class="card">
       <div class="card-header">
@@ -53,3 +81,7 @@
     <p>Recipe not found.</p>
   {{/if}}
 </div>
+
+<script src="/js/recipe.js"></script>
+
+{{! Path: Recipe app/views/layout.hbs }}
