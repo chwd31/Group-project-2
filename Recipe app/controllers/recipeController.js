@@ -1,7 +1,12 @@
-const { Recipe, User } = require('../models');
+const { User } = require('../models');
 
 async function addRecipe(req, res) {
   try {
+    // Check for authentication
+    if (!req.session.logged_in) {
+      return res.status(401).json({ error: 'You must be logged in to add a recipe' });
+    }
+
     const userId = req.params.userId;
     const user = await User.findByPk(userId);
     if (!user) {
