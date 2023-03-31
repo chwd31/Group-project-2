@@ -5,7 +5,7 @@ const exphbs = require('express-handlebars');
 const session = require('express-session');
 const hbs = exphbs.create({});
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-
+// const helpers = require('./util/auth');
 const homeRoutes = require('./routes/home-routes');
 const userRoutes = require('./routes/user-routes');
 
@@ -37,8 +37,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', homeRoutes);
-app.use('/users', userRoutes);
+app.use(userRoutes);
+app.use(homeRoutes);
 
 sequelize.sync()
     .then(() => {
