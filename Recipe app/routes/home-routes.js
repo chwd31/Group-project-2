@@ -4,6 +4,7 @@ const withAuth = require('../util/auth');
 
 router.get('/', withAuth, async (req, res) => {
   try {
+    console.log('test1')
     const userData = await User.findAll({
       attributes: { exclude: ['password'] },
       order: [['name', 'ASC']],
@@ -21,7 +22,9 @@ router.get('/', withAuth, async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
+  console.log('test2')
   if (req.session.logged_in) {
+    
     res.redirect('/');
     return;
   }

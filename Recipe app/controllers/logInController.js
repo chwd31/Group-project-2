@@ -1,6 +1,6 @@
 const { User } = require('../models');
 
-async function login(req, res) {
+const loginController = async function login(req, res) {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
 
@@ -32,4 +32,5 @@ async function login(req, res) {
   }
 }
 
-module.exports = login;
+
+module.exports = loginController;

@@ -1,6 +1,6 @@
 const { User } = require('../models');
 
-async function signup(req, res) {
+const signupController = async function signup(req, res) {
   try {
     const userData = await User.create({
       email: req.body.email,
@@ -19,4 +19,4 @@ async function signup(req, res) {
   }
 }
 
-module.exports = signup;
+module.exports = signupController;
