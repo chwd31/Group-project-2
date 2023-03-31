@@ -1,16 +1,17 @@
 const loginFormHandler = async (event) => {
     event.preventDefault();
-  
+    console.log("i was triggered")
     // Collect values from the login form
     const username = document.querySelector('#username-login').value.trim();
     const password = document.querySelector('#password-login').value.trim();
   
     if (username && password) {
       // Send a POST request to the API endpoint
+      console.log("user and password good")
       const response = await fetch('/login', {
         method: 'POST',
-        body: JSON.stringify({ email, password }),
         headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
       });
   
       if (response.ok) {
@@ -36,11 +37,11 @@ const loginFormHandler = async (event) => {
         headers: { 'Content-Type': 'application/json' },
       });
   
-      if (response.ok) {
-        document.location.replace('/');
-      } else {
-        alert(response.statusText);
-      }
+      // if (response.ok) {
+      //   document.location.replace('/');
+      // } else {
+      //   alert(response.statusText);
+      // }
     }
   };
   

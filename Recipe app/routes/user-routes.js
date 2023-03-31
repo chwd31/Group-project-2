@@ -7,6 +7,6 @@ const addRecipe = require('../controllers/recipeController');
 router.post('/login', loginController);
 router.post('/logout', logoutController);
 router.post('/signup', signupController);
-router.post('/users/:userId/recipes', addRecipe);
+router.post('/:userId/recipes', addRecipe);
 
 module.exports = router;
