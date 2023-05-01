@@ -10,10 +10,11 @@ router.post('/', async (req, res) => {
         directions: req.body.directions,
         user_id: req.session.user_id
        })
+         res.json(newPost)
     } catch (err) {
         res.status(400).json(err);
     }
 });
-
+// now get request for recipes
 
 module.exports = router;

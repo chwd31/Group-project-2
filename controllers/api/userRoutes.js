@@ -10,7 +10,7 @@ router.post('/', async (req, res) => {
        req.session.save(function () {
         req.session.user_id = newUser.id
         req.session.username = newUser.username
-        req.session.loggedin = true
+        req.session.logged_in = true
         res.json(newUser)
        })
     } catch (err) {
