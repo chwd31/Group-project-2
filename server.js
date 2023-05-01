@@ -24,13 +24,19 @@ const sess = {
 
 app.use(session(sess));
 
+// hbs.registerPartial('recipe', '{{recipe}}');
+
 app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
+app.set('view engine', 'hbs');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get('/', function(req, res) {
+    res.render('homepage');
+  });
+  
 app.use(routes);
 
 sequelize.sync({ force: false })
