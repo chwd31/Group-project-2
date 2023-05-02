@@ -1,44 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
-    <title>{{title}}</title>
-  </head>
-  <body>
-    <header>
-        {{!-- Heading for the page --}}
-      <h1>My Recipe App</h1>
-      <nav>
-        {{!-- Navigation menu --}}
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/recipes">Recipes</a></li>
-          {{!-- If user is logged in, display logout, if not display login or signup --}}
-          {{#if user}}
-            <li><a href="/logout" id="logout">Logout</a></li>
-          {{else}}
-            <li><a href="/login">Login</a></li>
-            <li><a href="/signup">Signup</a></li>
-          {{/if}}
-        </ul>
-      </nav>
-    </header>
-
-    <main>
-        {{!-- main content of body will be displayd here --}}
-      {{!-- {{> recipe}} --}}
-    </main>
-
-    <footer>
-        {{!-- Footer of the page --}}
-      <p>&copy; My Recipe App</p>
-    </footer>
-
-    {{#if logged_in}}
-    <script src="/js/logout.js"></script>
-    {{/if}}
-
-  </body>
-</html>
+<!-- Loop over each object in the recipes array -->
+{{#each recipes as |recipe| }}
+<div class="row mb-4 recipe">
+  <div class="col-md-5">
+    <h2>
+      <a href="/recipe/{{recipe.id}}">{{recipe.title}}</a>
+    </h2>
+    <p>Cooked by {{recipe.user.username}}</p>
+  </div>
+  <div class="col-md-7">
+    <p>
+      {{recipe.description}}
+    </p>
+    <p>
+      {{recipe.ingredients}}
+    </p>
+    <p>
+      {{recipe.directions}}
+    </p>
+  </div>
+</div>
+{{/each}}
