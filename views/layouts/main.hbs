@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>My Recipe App</title>
+  </head>
+  <body>
+    <header>
+        {{!-- Heading for the page --}}
+      <h1>My Recipe App</h1>
+      <nav>
+        {{!-- Navigation menu --}}
+      <nav>
+        <!-- Conditionally render login or logout links -->
+        {{#if logged_in}}
+        <a href="/profile">profile</a> |
+        <button class="no-button" id="logout">logout</button>
+        {{else}}
+        <a href="/login">login</a>
+        {{/if}}
+      </nav>
+    </header>
+
+    <main>
+        {{!-- main content of body will be displayd here --}}
+      {{{body}}}
+    </main>
+
+    <footer>
+        {{!-- Footer of the page --}}
+      <p>&copy; My Recipe App</p>
+    </footer>
+
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+
+  </body>
+</html>
