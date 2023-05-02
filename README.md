@@ -2,7 +2,7 @@
             
 ## Description
     
-This our second project of our bootcamp. This application is called "Recipe Hub," and it is essentially a blog site where users can post recipe, view others, and leave comments on posts. This application is our first big full stack project, focusing mainly on back-end, and it was an amazing learning experience for us. The idea for this project came from one of our group members who loves to cook. When we were bouncing around ideas to decide what we wanted to do for our project she said that she wanted a space to share her recipes and find others. This application took a good bit of effort, we had a lot of back and forth with errors, but eventually got it snagged out. We hope that this project will help other new developers with their first full stack projects and make it a little easier.
+This our second project of our bootcamp. This application is called "My Recipe App," and it is essentially a blog site where users can post recipes and view others' recipes. This application is our first big full stack project, focusing mainly on back-end, and it was an amazing learning experience for us. The idea for this project came from one of our group members who loves to cook. When we were bouncing around ideas to decide what we wanted to do for our project she said that she wanted a space to share her recipes and find others. This application took a good bit of effort, we had a lot of back and forth with errors, but eventually got it snagged out. We hope that this project will help other new developers with their first full stack projects and make it a little easier. Here is a link to the deployed application: 
     
 ## Table of Contents
 [Title](#-group-project-2)
@@ -33,7 +33,7 @@ To use this application, you will need to have Node.js installed on your desktop
             
 ## Usage
     
-This application is used to post recipes, view others recipes, and comment on posts. Once in your terminal you will type the command: mysql -u root -p. You will then be prompted to enter your password which you should have also put into your '.env' file. You will then source your schema file, and quit mysql. You will then need to enter your seeds folder and type the command: node seed. This will seed your database and create the tables that you need for your information. Lastly, to get your server running, you will need to type the command: npm start. Your server will then start and you can then go to the deployed site. Once at the site, a user can view posts without logging in; however, they will need to create an account or sign in to post or comment in the site. To post a recipe, they will follow a guideline to enter a name, instructions, ingredients, and a description.
+This application is used to post recipes and view others' recipes. Once in your terminal you will type the command `mysql -u root -p`. You will then be prompted to enter your password which you should have also put into your '.env' file. You will then source your schema file, and quit mysql. You will then need to enter your seeds folder and type the command `npm run seed`. This will seed your database and create the tables that you need for your information. Lastly, to get your server running, you will need to type the command: `npm run start`. Your server will then start and you can then go to the deployed site. Once at the site, a user can view posts without logging in; however, they will need to create an account or sign in to post on the site. To post a recipe, they will follow a guideline to enter a title, description, ingredients, and directions. If they go to the profile portion of the application, they will be able to view their own applications, with the option to delete any of them. 
     
 ## License 
 
@@ -41,7 +41,7 @@ This application is covered under the MIT License. For further explanation of wh
     
 ## Contribution
     
-The contributors for this project are [Chad Ward](https://github.com/chwd31), [Buddhasak Vongsavath](https://github.com/SirTumtums), [Matthew Duncan](https://github.com/MTDuncan), [Olivia Gilbert](https://github.com/umhello2020), [Karim Baptiste](https://github.com/KarimB101), and [Mikaela McConkey](https://github.com/mikaelamcconkey). If you click on the names of the individuals, you will be taken to their personal GitHub profiles.
+The contributors for this project are [Chad Ward](https://github.com/chwd31), [Buddhasak Vongsavath](https://github.com/SirTumtums), [Matthew Duncan](https://github.com/MTDuncan), [Olivia Gilbert](https://github.com/umhello2020), and [Karim Baptiste](https://github.com/KarimB101). If you click on the names of the individuals, you will be taken to their personal GitHub profiles.
   
 ## Tests
   
