@@ -1,8 +1,7 @@
-// const Sequelize = require('Sequelize')
 const sequelize = require('../config/connection');
-const { Model, DataTypes, Sequelize } = require('sequelize');
-
+const { Model, DataTypes } = require('sequelize');
 class Recipe extends Model {}
+
 Recipe.init(
   {
     id: {
@@ -19,19 +18,17 @@ Recipe.init(
       allowNull: false
     },
     ingredients: {
-      type: DataTypes.JSON,
-      // defaultValue: [],
-      // allowNull: false
+      type: DataTypes.TEXT,
+      allowNull: false
     },
     directions: {
-      type: DataTypes.JSON,
-      // defaultValue: [],
-      // allowNull: false
+      type: DataTypes.TEXT,
+      allowNull: false
     },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        modelName: "user",
+        modelName: "User",
         key: "id"
       }
     }
@@ -40,7 +37,10 @@ Recipe.init(
     sequelize,
     modelName: "recipe",
     freezeTableName: true,
-    underscored: true
+    underscored: true,
+    timestamps: true,
+    createdAt: 'create_at',
+    updatedAt: 'updated_at'
   }
 );
 
