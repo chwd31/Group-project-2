@@ -1,8 +1,8 @@
 /* Bootstrap 5.1.3 CSS */
-@import url("https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css");
+/* @import url("https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css"); */
 
 /* Custom CSS */
-body {
+/* body {
   font-family: 'Montserrat', sans-serif;
   color: #333;
   background-color: #f8f9fa;
@@ -78,10 +78,10 @@ footer {
   footer {
     padding: 10px;
   }
-}
+} */
   
   /* Set styling for the login form */
-  .form-signin {
+  /* .form-signin {
     max-width: 330px;
     padding: 15px;
     margin: 0 auto;
@@ -106,9 +106,9 @@ footer {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
   }
-  
+   */
   /* Set styling for the login button */
-  .btn-login {
+  /* .btn-login {
     background-color: #007bff;
     border-color: #007bff;
   }
@@ -116,53 +116,53 @@ footer {
   .btn-login:hover {
     background-color: #0069d9;
     border-color: #0062cc;
-  }
+  } */
 
   /* Recipe container */
-.recipe-container {
+/* .recipe-container {
     margin: 20px;
     padding: 20px;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 5px #ccc;
   }
-  
+   */
   /* Recipe image */
-  .recipe-img {
+  /* .recipe-img {
     width: 100%;
     height: 300px;
     object-fit: cover;
     border-radius: 5px;
-  }
+  } */
   
   /* Recipe details */
-  .recipe-details {
+  /* .recipe-details {
     margin: 10px 0;
     padding: 10px;
     background-color: #f8f8f8;
     border-radius: 5px;
-  }
+  } */
   
   /* Recipe name */
-  .recipe-name {
+  /* .recipe-name {
     font-size: 24px;
     font-weight: bold;
     color: #333;
-  }
+  } */
   
   /* Recipe description */
-  .recipe-desc {
+  /* .recipe-desc {
     font-size: 18px;
     color: #555;
-  }
+  } */
   
   /* Recipe ingredients */
-  .recipe-ingredients {
+  /* .recipe-ingredients {
     margin: 10px 0;
-  }
+  } */
   
   /* Recipe ingredients list */
-  .recipe-ingredients ul {
+  /* .recipe-ingredients ul {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -172,15 +172,15 @@ footer {
     margin: 5px 0;
     font-size: 18px;
     color: #555;
-  }
+  } */
   
   /* Recipe directions */
-  .recipe-directions {
+  /* .recipe-directions {
     margin: 10px 0;
-  }
+  } */
   
   /* Recipe directions list */
-  .recipe-directions ol {
+  /* .recipe-directions ol {
     list-style: decimal;
     margin: 0;
     padding: 0 0 0 20px;
@@ -190,31 +190,31 @@ footer {
     margin: 5px 0;
     font-size: 18px;
     color: #555;
-  }
+  } */
   
   /* Recipe author */
-  .recipe-author {
+  /* .recipe-author {
     margin-top: 10px;
     font-size: 16px;
     font-style: italic;
     color: #888;
-  }
+  } */
   
   /* Center the page content */
-main {
+/* main {
     max-width: 800px;
     margin: 0 auto;
     padding: 1rem;
-  }
+  } */
   
   /* Style the heading */
-  h2 {
+  /* h2 {
     margin-top: 0;
     font-size: 2rem;
-  }
+  } */
   
   /* Style the recipe and comment lists */
-  ul, ol {
+  /* ul, ol {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -231,20 +231,20 @@ main {
   
   a:hover {
     text-decoration: underline;
-  }
+  } */
   
   /* Style the "no recipes/comments yet" messages */
-  p {
+  /* p {
     font-style: italic;
-  }
+  } */
   
   /* Style the date and time */
-  small {
+  /* small {
     font-size: 0.8rem;
-  }
+  } */
   
   /* Style the form */
-  form {
+  /* form {
     display: flex;
     flex-direction: column;
     margin-top: 1rem;
@@ -271,5 +271,5 @@ main {
   
   button[type="submit"]:hover {
     background-color: #0062cc;
-  }
+  } */
   

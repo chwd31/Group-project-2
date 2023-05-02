@@ -11,7 +11,7 @@ const loginFormHandler = async (event) => {
       const response = await fetch('/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ username, password }),
       });
   
       if (response.ok) {
@@ -37,11 +37,11 @@ const loginFormHandler = async (event) => {
         headers: { 'Content-Type': 'application/json' },
       });
   
-      // if (response.ok) {
-      //   document.location.replace('/');
-      // } else {
-      //   alert(response.statusText);
-      // }
+      if (response.ok) {
+        document.location.replace('/');
+      } else {
+        alert(response.statusText);
+      }
     }
   };
   
