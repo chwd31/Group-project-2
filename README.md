@@ -29,7 +29,7 @@ Here are some simple visuals of what the application should look like in the bro
     
 ## Installation
     
-To use this application, you will need to have Node.js installed on your desktop. Once in your code editor of choice, you will need to open your terminal and initialize npm with the command: npm init. Once you have npm initialized, you will install npm with the command: npm install. To install all of the dependencies that we have used for this project you will use the command: npm i express sequelize mysql2 express-session bcrypt express-handlebars dotenv connect-session-sequelize handlebars path. In order to install nodemon, you will need to use the command: npm i nodemon --save-dev.
+To use this application, you will need to have Node.js installed on your desktop. Once in your code editor of choice, you will need to open your terminal and initialize npm with the command `npm init`. Once you have npm initialized, you will install npm with the command: npm install. To install all of the dependencies that we have used for this project you will use the command `npm i express sequelize mysql2 express-session bcrypt express-handlebars dotenv connect-session-sequelize handlebars path`. In order to install nodemon, you will need to use the command `npm i nodemon --save-dev`.
             
 ## Usage
     
